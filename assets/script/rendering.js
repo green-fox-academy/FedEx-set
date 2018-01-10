@@ -9,7 +9,7 @@ let createCards = function() {
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++){
             for (let l = 0; l < 3; l++){
-                let card = i + shapes[i] + pattern[j] + color[l]
+                let card = i+1 + shapes[i] + pattern[j] + color[l]
                 cards.push(card)
             }
         }
