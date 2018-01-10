@@ -8,6 +8,6 @@ function renderCards( cardCode ) {
 };
 
 function renderTable( card ) {
-  let table = document.querySelector('.game-table');
-  
+  let tableCard = document.querySelectorAll('.card');
+  console.log(tableCard);
 };
