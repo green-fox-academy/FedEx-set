@@ -1,29 +1,34 @@
 'use strict'
 
-function renderCards( cardCode ) {
-  let card = 
+function renderCards(cardCode, callback) {
   cardCode.forEach(function (code) {
-    code.split('1' || '2' || '3');
+    let patternNumber = code.length(0)
+    let pattern = code.substr(code.length -3)
+    let cardElement = `<div class="card" id="1"></div>`
+    let cardPattern = `<img src='../images/${pattern}.png' alt>`
+    cardElement.innerHTML = patternNumber * cardPattern
+    renderTable(cardElement)
   });
 };
 
-function renderTable( card ) {
+function renderTable( renderedCard ) {
   let tableCards = document.querySelectorAll('.card');
   console.log(tableCards);
   tableCards.forEach(function (card){
     if (!card.innerHTML){
       console.log(card.id)
+      card.innerHTML = `<div>${renderedCard}</div>`
     } else {
       console.log('van innerHTML')
     }
   })
 };
 
-renderTable();
+// renderTable();
 
 let cards = []
 
-let createCards = function() {
+let createCards = function(callback) {
     let shapes = ['d', 'w', 'c']
     let pattern = ['e', 'f', 's']
     let color = ['r', 'g', 'b']
@@ -35,7 +40,8 @@ let createCards = function() {
             }
         }
     }
-    return cards
+    callback(cards)
 }
 
-createCards()
+createCards(renderCards)
+
