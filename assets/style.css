@@ -75,10 +75,8 @@ button:active {
 }
 
 .content {
-  width: 70%;
+  width: 60%;
   height: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 
 img {
@@ -86,4 +84,6 @@ img {
   background-size: cover;    
   background-position: center;
   object-fit: cover;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
