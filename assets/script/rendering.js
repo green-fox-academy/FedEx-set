@@ -25,6 +25,7 @@ function renderCards(cardCode) {
 
   });
 };
+
 function renderTable( renderedCard ) {
   let tableContainer = document.querySelectorAll('.card-container')[0];
   console.log(renderedCard)
