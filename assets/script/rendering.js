@@ -8,6 +8,15 @@ function renderCards( cardCode ) {
 };
 
 function renderTable( card ) {
-  let tableCard = document.querySelectorAll('.card');
-  console.log(tableCard);
+  let tableCards = document.querySelectorAll('.card');
+  console.log(tableCards);
+  tableCards.forEach(function (card){
+    if (!card.innerHTML){
+      console.log(card.id)
+    } else {
+      console.log('van innerHTML')
+    }
+  })
 };
+
+renderTable();
