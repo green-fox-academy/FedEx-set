@@ -1,12 +1,5 @@
 'use strict'
 
-// let oneCard = document.querySelector('.card')
-// oneCard.addEventListener('click', clickAction)
-// function clickAction(){
-//   oneCard.setAttribute('class', 'card selected')
-//     alert('kaka');
-// }
-
 function renderCards(cardCode) {
   cardCode.forEach(function (code) {
     let patternNumber = code[0]
@@ -30,15 +23,9 @@ function renderCards(cardCode) {
     oneCard.addEventListener('click', function(event){
       clickAction(oneCard)
     })
-    // oneCard.setAttribute('class', 'card selected');
   });
 };
 
-// function renderTable( renderedCard ) {
-//   let tableContainer = document.querySelectorAll('.card-container')[0];
-//   console.log(renderedCard)
-//   tableContainer.appendChild(renderedCard)
-// }
       let cards = []
       let createCards = function(callback) {
         let shapes = ['d', 'w', 'c']
@@ -80,11 +67,6 @@ function renderCards(cardCode) {
         console.log(cards.length);    
         renderCards(table);
       }
-
-
-// let oneCard = document.querySelectorAll('.card')
-// console.log(oneCard)
-//   oneCard.addEventListener('click', clickAction)
 
   function clickAction(card){
     card.setAttribute('class', 'card selected')
