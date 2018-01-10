@@ -1,3 +1,18 @@
+let firstNumber
+let secondNumber
+let thirdNumber
+
+let firstShape
+let secondShape
+let thirdShape
+
+let firstPattern
+let secondPattern
+let thirdPattern
+
+let firstColor
+let secondColor
+let thirdColor
 
 function cardChecker(){
     pass
