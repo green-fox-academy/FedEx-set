@@ -7,8 +7,9 @@ function renderCards(cardCode) {
     let i = 0
     let pattern = code.substr(code.length -3)
     // console.log(pattern)
-    let cardContent = `<div class="content"><img src="assets/images/${pattern}.png" alt=""></div>`
+    let cardContent = `<div class="content" id="${code}"><img src="assets/images/${pattern}.png" alt=""></div>`
     // let cardPattern = `<img src='../images/${pattern}.png' alt>`.repeat(patternNumber)
+    
     let cardElement = document.createElement('div')
     cardElement.setAttribute('class', 'card')
     cardElement.setAttribute('id', i)
@@ -20,6 +21,7 @@ function renderCards(cardCode) {
 
   });
 };
+
 function renderTable( renderedCard ) {
   let tableContainer = document.querySelectorAll('.card-container')[0];
   console.log(renderedCard)
