@@ -42,7 +42,7 @@ function numberChecker(x, y, z){
         setCounter ++;
         return true
     }else {
-        console.log('wrong number');
+        console.log('Wrong number');
         return true
     }
 };
