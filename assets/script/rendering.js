@@ -1,29 +1,23 @@
 'use strict'
 
 function renderCards(cardCode) {
-  // console.log(cardCode)
-  cardCode.forEach(function (code) {
-    let i = 0;
-    let patternNumber = code[0];
-    let pattern = code.substr(code.length -3);
-    let cardPattern = document.createElement('img');
-    // cardPattern.setAttribute()
-    // ${cardPattern.repeat(patternNumber)}
-    // let cardPattern = document.createElement('img')
-    // cardPattern.setAttribute('img', 'src="assets/images/.png" alt="">')
-    // let cardPattern = `<img src="assets/images/${pattern}.png" alt="">`
-    // let cardContent = document.createElement('div')
-    // cardContent.setAttribute('div', 'content')
-    // cardContent.innerText = cardPattern
+  console.log(cardCode)
+    cardCode.forEach(function (code) {
+    let patternNumber = code[0]
+    let i = 0
+    let pattern = code.substr(code.length -3)
+    // console.log(pattern)
+    let cardContent = `<div class="content"><img src="assets/images/${pattern}.png" alt=""></div>`
+    // let cardPattern = `<img src='../images/${pattern}.png' alt>`.repeat(patternNumber)
     let cardElement = document.createElement('div')
-    cardElement.innerText = cardPattern
     cardElement.setAttribute('class', 'card')
     cardElement.setAttribute('id', i)
-    // renderTable(cardElement)
+    cardElement.innerHTML = cardContent
     let tableContainer = document.querySelectorAll('.card-container')[0];
-    // console.log(renderedCard);
-    i++;  
-    tableContainer.appendChild(cardElement);
+    tableContainer.appendChild(cardElement)
+    i++
+    // renderTable(cardElement)
+
   });
 };
 function renderTable( renderedCard ) {
@@ -65,7 +59,6 @@ let createCards = function(callback) {
             cards[l] = 3 + cards[l]
         }
     }
-    console.log(cards)
     callback(cards)
 }
 createCards(renderCards)
