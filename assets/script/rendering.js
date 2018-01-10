@@ -3,7 +3,6 @@
 function renderCards(cardCode) {
   cardCode.forEach(function (code) {
     let patternNumber = code[0]
-    let i = 0
     let pattern = code.substr(code.length -3)
     let cardContent = document.createElement ('div')
     cardContent.setAttribute('class', 'content')
@@ -20,25 +19,13 @@ function renderCards(cardCode) {
     cardElement.appendChild(cardContent)
     let tableContainer = document.querySelectorAll('.card-container')[0];
     tableContainer.appendChild(cardElement)
-    i++
-    
+    let oneCard = document.getElementById(code)
+    oneCard.addEventListener('click', function(event){
+      clickAction(oneCard)
+    })
   });
 };
 
-function renderTable( renderedCard ) {
-  let tableContainer = document.querySelectorAll('.card-container')[0];
-  console.log(renderedCard)
-  tableContainer.appendChild(renderedCard)
-}
-// tableCards.forEach(function (card){
-  //   if (!card.innerHTML){
-    //     console.log(card.id)
-    //     card.innerHTML = `<div>${renderedCard}</div>`
-    //   } else {
-      //     console.log('van innerHTML')
-      //   }
-      // })
-      // renderTable();
       let cards = []
       let createCards = function(callback) {
         let shapes = ['d', 'w', 'c']
@@ -105,3 +92,8 @@ function cardChanger(){
     selectedCards[j].setAttribute('class', 'card')
   }
 };
+
+
+  function clickAction(card){
+    card.setAttribute('class', 'card selected')
+}
