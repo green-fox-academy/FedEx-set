@@ -14,8 +14,20 @@ function renderCards(cardCode) {
     cardElement.setAttribute('class', 'card')
     cardElement.setAttribute('id', i)
     cardElement.innerHTML = cardContent
-    let tableContainer = document.querySelectorAll('.card-container')[0];
-    tableContainer.appendChild(cardElement)
+    // let tableContainer = document.querySelectorAll('.card-container')[0];
+    let tableContainer;
+    if (patternNumber === 1){
+        tableContainer = document.querySelectorAll('.card-container')[0];
+        tableContainer.appendChild(cardElement)
+    } else if (patternNumber === 2) {
+        tableContainer2 = document.querySelectorAll('.card-container')[0];
+        tableContainer.appendChild(cardElement)
+        tableContainer.appendChild(cardElement)
+    } else if (patternNumber === 3) {
+        tableContainer.appendChild(cardElement)
+        tableContainer.appendChild(cardElement)
+        tableContainer.appendChild(cardElement)
+    }
     i++
     // renderTable(cardElement)
 
