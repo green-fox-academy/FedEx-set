@@ -42,17 +42,17 @@ function numberChecker(x, y, z){
         setCounter ++;
         return true
     }else {
-        console.log('wrong number');
+        console.log('Wrong number');
         return true
     }
 };
 
-function attributeChecker(x, y, z, atribute){
+function attributeChecker(x, y, z, attribute){
     if (x === y && y === z || x !== y && y !== z && x !== z){
         setCounter ++;
         return true
     } else {
-        console.log('Wrong ' + atribute)
+        console.log('Wrong ' + attribute)
         return true
     }
 };

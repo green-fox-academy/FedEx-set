@@ -4,8 +4,8 @@
 }
 
 body {
-  width: 900px;
-  height: 750px;;
+  width: 750px;
+  height: 600px;;
   margin: auto;
   background: rgb(228, 228, 228);
 }
@@ -27,7 +27,7 @@ body {
 
 button {
   width: 90%;
-  height: 3rem;
+  height: 2.6rem;
   border: dashed black 1px;
   margin: 5px;
   font-size: 1.1rem;
@@ -75,10 +75,8 @@ button:active {
 }
 
 .content {
-  width: 70%;
+  width: 60%;
   height: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 
 img {
@@ -86,4 +84,10 @@ img {
   background-size: cover;    
   background-position: center;
   object-fit: cover;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.selected {
+  background: rgb(255, 223, 152);
 }
