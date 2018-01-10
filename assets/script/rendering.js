@@ -1,8 +1,15 @@
 'use strict'
 
+function clickAction(){
+    alert('kaka');
+}
+
 function renderCards(cardCode) {
     cardCode.forEach(function (code) {
 
+        let oneCard = document.querySelector('.card-container')
+    oneCard.addEventListener('click', clickAction)
+    oneCard.setAttribute('class', 'card selected');
       let patternNumber = code[0]
       let i = 0
       let pattern = code.substr(code.length -3)
