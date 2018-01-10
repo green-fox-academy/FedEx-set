@@ -1,9 +1,10 @@
 'use strict'
 
-function renderCards( cardCode ) {
-  let card = 
+function renderCards(cardCode) {
   cardCode.forEach(function (code) {
-    code.split('1' || '2' || '3');
+    let pattern = code.substr(code.length -3)
+    
+    console.log(pattern)
   });
 };
 
@@ -20,11 +21,11 @@ function renderTable( renderedCard ) {
   })
 };
 
-renderTable();
+// renderTable();
 
 let cards = []
 
-let createCards = function() {
+let createCards = function(callback) {
     let shapes = ['d', 'w', 'c']
     let pattern = ['e', 'f', 's']
     let color = ['r', 'g', 'b']
@@ -36,7 +37,8 @@ let createCards = function() {
             }
         }
     }
-    return cards
+    callback(cards)
 }
 
-createCards()
+createCards(renderCards)
+
