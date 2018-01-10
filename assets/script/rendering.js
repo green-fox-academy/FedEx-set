@@ -23,7 +23,7 @@ renderTable();
 
 let cards = []
 
-let createCards = function() {
+let createCards = function(callback) {
     let shapes = ['d', 'w', 'c']
     let pattern = ['e', 'f', 's']
     let color = ['r', 'g', 'b']
@@ -35,7 +35,7 @@ let createCards = function() {
             }
         }
     }
-    return cards
+    callback(cards)
 }
 
-createCards()
+createCards(renderCards)
