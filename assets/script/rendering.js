@@ -1,12 +1,14 @@
 'use strict'
 
 function renderCards(cardCode, callback) {
+  console.log(cardCode)
   cardCode.forEach(function (code) {
-    let patternNumber = code.length(0)
+    let i = 0
+    let patternNumber = code.length[0]
     let pattern = code.substr(code.length -3)
-    let cardElement = `<div class="card" id="1"></div>`
     let cardPattern = `<img src='../images/${pattern}.png' alt>`
-    cardElement.innerHTML = patternNumber * cardPattern
+    let cardElement = `<div class="card" id="${i}">${cardPattern * patternNumber}</div>`
+    i++
     renderTable(cardElement)
   });
 };
