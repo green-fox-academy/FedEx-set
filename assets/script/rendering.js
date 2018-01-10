@@ -16,7 +16,7 @@ function renderCards(cardCode) {
     }
     let cardElement = document.createElement('div')
     cardElement.setAttribute('class', 'card')
-    cardElement.setAttribute('id', i)
+    cardElement.setAttribute('id', code)
     cardElement.appendChild(cardContent)
     let tableContainer = document.querySelectorAll('.card-container')[0];
     tableContainer.appendChild(cardElement)
