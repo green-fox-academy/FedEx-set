@@ -57,4 +57,8 @@ function attributeChecker(x, y, z, attribute){
     }
 };
 
+function cardChanger(){
+    let selectedCards = document.querySelectorAll('.selected');
+}
+
 cardChecker(firstNumber, secondNumber, thirdNumber);
