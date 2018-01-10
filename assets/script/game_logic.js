@@ -47,12 +47,12 @@ function numberChecker(x, y, z){
     }
 };
 
-function attributeChecker(x, y, z, atribute){
+function attributeChecker(x, y, z, attribute){
     if (x === y && y === z || x !== y && y !== z && x !== z){
         setCounter ++;
         return true
     } else {
-        console.log('Wrong ' + atribute)
+        console.log('Wrong ' + attribute)
         return true
     }
 };
