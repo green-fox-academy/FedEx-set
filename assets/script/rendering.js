@@ -57,16 +57,42 @@ function renderCards(cardCode) {
       
       createCards(getCards)
       
-      function getCards(cards){
-        let table = [];
-        for (let i = 1; i <= 12; i++){
-          let cardOnTable = Math.floor(Math.random() * cards.length);
-          table.push(cards[cardOnTable]);
-          cards.splice(cardOnTable, 1);
-        }
-        console.log(cards.length);    
-        renderCards(table);
-      }
+function getCards(cards){
+  let table = [];
+  for (let i = 1; i <= 12; i++){
+    let cardOnTable = Math.floor(Math.random() * cards.length);
+    table.push(cards[cardOnTable]);
+    cards.splice(cardOnTable, 1);
+  }
+  renderCards(table);
+}
+console.log(cards.length);    
+
+function cardChanger(){
+  let newCards = [];
+  for (let i = 1; i <= 3; i++){
+    let newCard = Math.floor(Math.random() * cards.length);
+    newCards.push(cards[newCard]);
+    cards.splice(newCard, 1);
+  };
+  let selectedCards = document.querySelectorAll('.selected');
+  for (let j = 0; j < 3; j++){
+    selectedCards[j].innerHTML = ''
+    let patternNumber = newCards[j][0]
+    let pattern = code.substr(newCards[j].length -3)
+    let cardContent = document.createElement ('div')
+    cardContent.setAttribute('class', 'content')
+    let cardPattern = document.createElement('img')
+    cardPattern.setAttribute('src', 'assets/images/'+ pattern + '.png')
+    cardContent.appendChild(cardPattern)
+    for (let n = 0; n < parseInt(patternNumber) - 1; n++) {
+      let cardPattern2 = cardPattern.cloneNode(true)
+      cardContent.appendChild(cardPattern2)
+    }
+    selectedCards[j].setAttribute('class', 'card')
+  }
+};
+
 
   function clickAction(card){
     card.setAttribute('class', 'card selected')
