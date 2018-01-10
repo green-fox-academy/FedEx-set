@@ -1,30 +1,40 @@
 'use strict'
 
-function renderCards(cardCode, callback) {
+function renderCards(cardCode) {
   console.log(cardCode)
   cardCode.forEach(function (code) {
     let i = 0
-    let patternNumber = code.length[0]
+    let patternNumber = code[0]
+    // console.log(patternNumber)
     let pattern = code.substr(code.length -3)
+    // console.log(pattern)
     let cardPattern = `<img src='../images/${pattern}.png' alt>`
-    let cardElement = `<div class="card" id="${i}">${cardPattern * patternNumber}</div>`
+    let cardContent = `class="card" id="${i}"`
+    ${cardPattern.repeat(patternNumber)}
+    let cardElement = document.createElement('div')
+    cardElement.innerHTML = cardContent
     i++
-    renderTable(cardElement)
+    // renderTable(cardElement)
+    let tableContainer = document.querySelectorAll('.card-container')[0];
+    // console.log(renderedCard)
+    tableContainer.appendChild(cardElement)
+
   });
 };
 
 function renderTable( renderedCard ) {
-  let tableCards = document.querySelectorAll('.card');
-  console.log(tableCards);
-  tableCards.forEach(function (card){
-    if (!card.innerHTML){
-      console.log(card.id)
-      card.innerHTML = `<div>${renderedCard}</div>`
-    } else {
-      console.log('van innerHTML')
-    }
-  })
-};
+  let tableContainer = document.querySelectorAll('.card-container')[0];
+  console.log(renderedCard)
+  tableContainer.appendChild(renderedCard)
+  }
+  // tableCards.forEach(function (card){
+  //   if (!card.innerHTML){
+  //     console.log(card.id)
+  //     card.innerHTML = `<div>${renderedCard}</div>`
+  //   } else {
+  //     console.log('van innerHTML')
+  //   }
+  // })
 
 // renderTable();
 
