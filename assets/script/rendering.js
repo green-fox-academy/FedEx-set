@@ -7,12 +7,13 @@ function renderCards( cardCode ) {
   });
 };
 
-function renderTable( card ) {
+function renderTable( renderedCard ) {
   let tableCards = document.querySelectorAll('.card');
   console.log(tableCards);
   tableCards.forEach(function (card){
     if (!card.innerHTML){
       console.log(card.id)
+      card.innerHTML = `<div>${renderedCard}</div>`
     } else {
       console.log('van innerHTML')
     }
