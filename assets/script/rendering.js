@@ -65,7 +65,7 @@ createCards(getCards)
 
 function getCards(cards){
   let table = [];
-  for (let i = 1; i <= 12; i++){
+  for (let i = 0; i < 12; i++){
     let cardOnTable = Math.floor(Math.random() * cards.length);
     table.push(cards[cardOnTable]);
     cards.splice(cardOnTable, 1);
@@ -101,6 +101,7 @@ function cardChanger(){
     }
     selectedCards[j].appendChild(cardContent)
     selectedCards[j].setAttribute('class', 'card')
+    console.log(cards.length)
   }
 };
 
@@ -109,11 +110,15 @@ function cardChanger(){
     if (card.getAttribute('class') === 'card' && selectThree.length < 3){
       card.setAttribute('class', 'card selected')
       selectThree.push(card)
+      console.log(selectThree)
       if (selectThree.length === 3){
         setChecker(selectThree)
+        selectThree = []
+        console.log(selectThree)
       }
   } else if (card.getAttribute('class') === 'card selected') {
     card.setAttribute('class', 'card')
+    console.log(selectThree)
     selectThree.pop(card)
   }
 }
