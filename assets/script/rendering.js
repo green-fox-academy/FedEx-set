@@ -1,6 +1,6 @@
 'use strict'
 
-// import cardChecker from 'game_logic.js';
+// import cardChecker from 'game_logic';
 
 let selectCounter = 0;
 
@@ -70,7 +70,7 @@ function getCards(cards){
   }
   renderCards(table);
 }
-console.log(cards.length);    
+// console.log(cards.length);
 
 function cardChanger(){
   let newCards = [];
@@ -113,7 +113,6 @@ function clickAction(card){
   }
 }
 
-// console.log(typeof cardChanger());
 
 // let setCounter = 0;
 
@@ -197,9 +196,3 @@ function attributeChecker(x, y, z, attribute){
         return true
     }
 };
-
-function cardChanger(){
-    let selectedCards = document.querySelectorAll('.selected');
-}
-
-// cardChecker(firstNumber, secondNumber, thirdNumber);
