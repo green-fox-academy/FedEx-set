@@ -1,6 +1,5 @@
 'use strict'
 
-// import cardChecker from 'game_logic';
 
 let selectCounter = 0;
 
@@ -102,7 +101,7 @@ function cardChanger(){
 };
 
   function clickAction(card){
-    
+    errorLine.textContent = "";
     if (card.getAttribute('class') === 'card' && selectThree.length < 3){
       card.setAttribute('class', 'card selected')
       selectThree.push(card)
@@ -142,8 +141,14 @@ function setChecker(selectThree){
 
 
 function renderError(attribute) {
+  // const sidebar = document.querySelector('.sidebar');
+  // const errorLine = document.createElement('p');
+  // errorLine.textContent = 'Wrong ' + attribute;
+  // sidebar.appendChild(errorLine);
+  
+  console.log("EZ AZ: " + attribute)
   const sidebar = document.querySelector('.sidebar');
-  const errorLine = document.createElement('p');
-  sidebar.appendChild(errorLine);
-  errorLine.innerHTML = 'Wrong ' + attribute;
+  errorLine.textContent += " " + attribute;
+  
 }
+const errorLine = document.querySelector('.log');
