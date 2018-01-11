@@ -95,5 +95,9 @@ function cardChanger(){
 
 
   function clickAction(card){
-    card.setAttribute('class', 'card selected')
+    if (card.getAttribute('class') === 'card'){
+      card.setAttribute('class', 'card selected')
+    } else {
+      card.setAttribute('class', 'card')
+    }
 }
