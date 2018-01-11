@@ -34,8 +34,8 @@ let thirdColor;
 // let secondColor = 'A';
 // let thirdColor = 'A';
 
-function cardChecker(x,y,z){
-    if (numberChecker(x,y,z)){
+function cardChecker(){
+    if (numberChecker(firstNumber,secondNumber,thirdNumber)){
         if (attributeChecker(firstShape, secondShape, thirdShape, 'shape')){
             if (attributeChecker(firstPattern, secondPattern, thirdPattern, 'pattern')){
                 if (attributeChecker(firstColor, secondColor, thirdColor, 'color')){
@@ -77,4 +77,4 @@ function cardChanger(){
     let selectedCards = document.querySelectorAll('.selected');
 }
 
-cardChecker(firstNumber, secondNumber, thirdNumber);
+// cardChecker(firstNumber, secondNumber, thirdNumber);

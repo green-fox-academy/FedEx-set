@@ -1,5 +1,9 @@
 'use strict'
 
+// import cardChecker from 'game_logic';
+
+let selectCounter = 0;
+
 function renderCards(cardCode) {
   cardCode.forEach(function (code) {
     let patternNumber = code[0]
@@ -26,37 +30,36 @@ function renderCards(cardCode) {
   });
 };
 
-      let cards = []
-      let createCards = function(callback) {
-        let shapes = ['d', 'w', 'c']
-        let pattern = ['e', 'f', 's']
-        let color = ['r', 'g', 'b']
-        for (let anna = 0; anna < 3; anna++){
-          for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 3; j++){
-              for (let k = 0; k < 3; k++){
-                let card = shapes[i] + pattern[j] + color[k]
-                cards.push(card)
-              }
-            }
-          }
+let cards = []
+let createCards = function(callback) {
+  let shapes = ['d', 'w', 'c']
+  let pattern = ['e', 'f', 's']
+  let color = ['r', 'g', 'b']
+  for (let anna = 0; anna < 3; anna++){
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++){
+        for (let k = 0; k < 3; k++){
+          let card = shapes[i] + pattern[j] + color[k]
+          cards.push(card)
         }
-        
-        for (let l = 0; l < cards.length * 3; l++){
-          if ( l < 28){
-            cards[l] = 1 + cards[l]
-          } else if ( l < 54){
-            cards[l] = 2 + cards[l]
-          } else if ( l < 81){
-            cards[l] = 3 + cards[l]
-          }
-        }
-        callback(cards)
       }
-      
-      
-      createCards(getCards)
-      
+    }
+  }
+  
+  for (let l = 0; l < cards.length * 3; l++){
+    if ( l < 28){
+      cards[l] = 1 + cards[l]
+    } else if ( l < 54){
+      cards[l] = 2 + cards[l]
+    } else if ( l < 81){
+      cards[l] = 3 + cards[l]
+    }
+  }
+  callback(cards)
+}
+
+createCards(getCards)
+
 function getCards(cards){
   let table = [];
   for (let i = 1; i <= 12; i++){
@@ -70,7 +73,6 @@ console.log(cards.length);
 let cardCounter = document.querySelector('#card-counter');
 cardCounter.textContent = cards.length;
 
-
 function cardChanger(){
   let newCards = [];
   for (let i = 1; i <= 3; i++){
@@ -81,8 +83,10 @@ function cardChanger(){
   let selectedCards = document.querySelectorAll('.selected');
   for (let j = 0; j < 3; j++){
     selectedCards[j].innerHTML = ''
+    selectedCards[j].setAttribute('id', newCards[j])
     let patternNumber = newCards[j][0]
-    let pattern = code.substr(newCards[j].length -3)
+    console.log(newCards[j])
+    let pattern = newCards[j].substr(newCards[j].length -3)
     let cardContent = document.createElement ('div')
     cardContent.setAttribute('class', 'content')
     let cardPattern = document.createElement('img')
@@ -92,10 +96,10 @@ function cardChanger(){
       let cardPattern2 = cardPattern.cloneNode(true)
       cardContent.appendChild(cardPattern2)
     }
+    selectedCards[j].appendChild(cardContent)
     selectedCards[j].setAttribute('class', 'card')
   }
 };
-
 
   function clickAction(card){
     
