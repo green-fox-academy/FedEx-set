@@ -113,6 +113,7 @@ function cardChanger(){
       selectThree.push(card)
       console.log(selectThree)
       if (selectThree.length === 3){
+        errorLine.textContent = "";
        setChecker(selectThree);
        let listOfSelected = document.querySelectorAll('.selected');
        listOfSelected.forEach(function(element){
