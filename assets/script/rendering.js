@@ -66,7 +66,10 @@ function getCards(cards){
   }
   renderCards(table);
 }
-console.log(cards.length);    
+console.log(cards.length);   
+let cardCounter = document.querySelector('#card-counter');
+cardCounter.textContent = cards.length;
+
 
 function cardChanger(){
   let newCards = [];
@@ -99,11 +102,17 @@ function cardChanger(){
     if (card.getAttribute('class') === 'card' && selectThree.length < 3){
       card.setAttribute('class', 'card selected')
     selectThree.push(card)
+      if (selectThree.length === 3){
+        setChecker(selectThree)
+      }
   } else if (card.getAttribute('class') === 'card selected') {
     card.setAttribute('class', 'card')
     selectThree.pop(card)
   }
-
 }
 
 let selectThree = [];
+
+function setChecker(selectThree){
+  console.log(selectThree)
+}
