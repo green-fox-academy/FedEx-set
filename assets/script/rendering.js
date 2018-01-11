@@ -142,5 +142,11 @@ function setChecker(selectThree){
   secondColor = selectThree[1].id[3]
   thirdColor = selectThree[2].id[3]
   
-cardChecker(firstNumber, secondNumber, thirdNumber)
+  cardChecker(firstNumber, secondNumber, thirdNumber)
+}
+
+
+function renderError(a) {
+  const userError = document.querySelector('.error-message');
+  userError.innerHTML = 'Wrong ' + a;
 }

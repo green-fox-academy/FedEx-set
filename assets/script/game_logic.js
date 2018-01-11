@@ -28,6 +28,7 @@ function cardChecker(){
                         console.log('set');
                         setCounter = 0;
                         cardChanger();
+                        cardCounter.textContent = cards.length;
                         return true
                     } else {
                         setCounter = 0;
@@ -42,7 +43,7 @@ function numberChecker(x, y, z){
     if (x === y && y === z || Number(x) + Number(y) + Number(z) === 6){
         setCounter ++;
         return true
-    }else {
+    } else {
         console.log('Wrong number');
         return true
     }
@@ -54,6 +55,7 @@ function attributeChecker(x, y, z, attribute){
         return true
     } else {
         console.log('Wrong ' + attribute)
+        renderError(attribute);
         return true
     }
 };
