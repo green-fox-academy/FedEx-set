@@ -2,24 +2,24 @@
 
 let setCounter = 0;
 
-let firstNumber = '1'; 
-let secondNumber = '2';
-let thirdNumber = '3';
+let firstNumber; 
+let secondNumber;
+let thirdNumber;
 
-let firstShape = 'A';
-let secondShape = 'B';
-let thirdShape = 'C';
+let firstShape;
+let secondShape;
+let thirdShape;
 
-let firstPattern = 'B';
-let secondPattern = 'A';
-let thirdPattern = 'C';
+let firstPattern;
+let secondPattern;
+let thirdPattern;
 
-let firstColor = 'A';
-let secondColor = 'A';
-let thirdColor = 'A';
+let firstColor;
+let secondColor;
+let thirdColor;
 
-function cardChecker(x,y,z){
-    if (numberChecker(x,y,z)){
+function cardChecker(){
+    if (numberChecker(firstNumber,secondNumber,thirdNumber)){
         if (attributeChecker(firstShape, secondShape, thirdShape, 'shape')){
             if (attributeChecker(firstPattern, secondPattern, thirdPattern, 'pattern')){
                 if (attributeChecker(firstColor, secondColor, thirdColor, 'color')){
@@ -56,5 +56,3 @@ function attributeChecker(x, y, z, attribute){
         return true
     }
 };
-
-cardChecker(firstNumber, secondNumber, thirdNumber);
