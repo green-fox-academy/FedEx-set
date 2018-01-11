@@ -56,8 +56,13 @@ function attributeChecker(x, y, z, attribute){
     } else {
         console.log('Wrong ' + attribute)
         let errorMsg = [];
-        errorMsg.push( "Wrong " + attribute );
-        renderError(errorMsg);
+        if (setCounter === 0 || setCounter === 3 || setCounter === 2 || setCounter === 1){
+            errorMsg.push( "Wrong " + attribute );
+            renderError(errorMsg);
+        } else if(setCounter === 4) {
+            errorMsg.push("SET!")
+            renderError(errorMsg)
+        }
         return true
     }
 };
