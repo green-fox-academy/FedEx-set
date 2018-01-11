@@ -105,17 +105,13 @@ function clickAction(card){
   selectCounter++
   console.log(selectCounter)
   if(selectCounter === 3){
-    if(cardChecker()){
-      cardChanger()
-    }
+    cardChecker()
     selectCounter = 0;
     console.log(cards.length)  
   }
 }
 
 // console.log(typeof cardChanger());
-
-'use strict';
 
 let setCounter = 0;
 
@@ -144,7 +140,8 @@ function cardChecker(){
                     if (setCounter === 4){
                         console.log('set');
                         setCounter = 0;
-                        return true
+                        cardChanger();
+                        // return true
                     } else {
                         setCounter = 0;
                     }
