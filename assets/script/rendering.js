@@ -107,49 +107,58 @@ function cardChanger(){
 
   function clickAction(card){
     
+    
     if (card.getAttribute('class') === 'card' && selectThree.length < 3){
       card.setAttribute('class', 'card selected')
       selectThree.push(card)
       console.log(selectThree)
       if (selectThree.length === 3){
-        setChecker(selectThree)
-        selectThree = []
-        console.log(selectThree)
+       setChecker(selectThree);
+       let listOfSelected = document.querySelectorAll('.selected');
+       listOfSelected.forEach(function(element){
+        element.setAttribute('class', 'card')
+      })
+      selectThree = []
       }
-  } else if (card.getAttribute('class') === 'card selected') {
-    card.setAttribute('class', 'card')
-    console.log(selectThree)
-    selectThree.pop(card)
+        // card.setAttribute('class', 'card')
+    } else if (card.getAttribute('class') === 'card selected') {
+      card.setAttribute('class', 'card')
+      selectThree.pop(card)
+    } else if (selectThree.length > 3) {
+      // console.log(selectThree)
+    }
   }
-}
-
-let selectThree = [];
-
-function setChecker(selectThree){
-  selectThree.forEach(function (e){
-    console.log(e.id)
-  })
-  firstNumber = selectThree[0].id[0]
-  secondNumber = selectThree[1].id[0]
-  thirdNumber = selectThree[2].id[0]
   
-  firstShape = selectThree[0].id[1]
-  secondShape = selectThree[1].id[1]
-  thirdShape = selectThree[2].id[1]
+  let selectThree = [];
   
-  firstPattern = selectThree[0].id[2]
-  secondPattern = selectThree[1].id[2]
-  thirdPattern = selectThree[2].id[2]
-  
-  firstColor = selectThree[0].id[3]
-  secondColor = selectThree[1].id[3]
-  thirdColor = selectThree[2].id[3]
-  
-  cardChecker(firstNumber, secondNumber, thirdNumber)
+  function setChecker(selectThree){
+    selectThree.forEach(function (e){
+      console.log(e.id)
+    })
+    firstNumber = selectThree[0].id[0]
+    secondNumber = selectThree[1].id[0]
+    thirdNumber = selectThree[2].id[0]
+    
+    firstShape = selectThree[0].id[1]
+    secondShape = selectThree[1].id[1]
+    thirdShape = selectThree[2].id[1]
+    
+    firstPattern = selectThree[0].id[2]
+    secondPattern = selectThree[1].id[2]
+    thirdPattern = selectThree[2].id[2]
+    
+    firstColor = selectThree[0].id[3]
+    secondColor = selectThree[1].id[3]
+    thirdColor = selectThree[2].id[3]
+    
+    cardChecker(firstNumber, secondNumber, thirdNumber)
 }
 
 
 function renderError(a) {
   const userError = document.querySelector('.error-message');
+  if(cardChecker){
+    userError.innerHTML = "SET! U R $up€r @w€$0m€";
+  }
   userError.innerHTML = 'Wrong ' + a;
 }
