@@ -58,7 +58,6 @@ let createCards = function(callback) {
   callback(cards)
 }
 
-
 createCards(getCards)
 
 function getCards(cards){
@@ -70,7 +69,9 @@ function getCards(cards){
   }
   renderCards(table);
 }
-// console.log(cards.length);
+console.log(cards.length);   
+let cardCounter = document.querySelector('#card-counter');
+cardCounter.textContent = cards.length;
 
 function cardChanger(){
   let newCards = [];
@@ -100,15 +101,41 @@ function cardChanger(){
   }
 };
 
-function clickAction(card){
-  card.setAttribute('class', 'card selected')
-  selectCounter++
-  console.log(selectCounter)
-  if(selectCounter === 3){
-    if (cardChecker()){
-      cardChanger()
-      selectCounter = 0;
-    }
-    console.log(cards.length)  
+  function clickAction(card){
+    
+    if (card.getAttribute('class') === 'card' && selectThree.length < 3){
+      card.setAttribute('class', 'card selected')
+      selectThree.push(card)
+      if (selectThree.length === 3){
+        setChecker(selectThree)
+      }
+  } else if (card.getAttribute('class') === 'card selected') {
+    card.setAttribute('class', 'card')
+    selectThree.pop(card)
   }
+}
+
+let selectThree = [];
+
+function setChecker(selectThree){
+  selectThree.forEach(function (e){
+    console.log(e.id)
+  })
+  firstNumber = selectThree[0].id[0]
+  secondNumber = selectThree[1].id[0]
+  thirdNumber = selectThree[2].id[0]
+  
+  firstShape = selectThree[0].id[1]
+  secondShape = selectThree[1].id[1]
+  thirdShape = selectThree[2].id[1]
+  
+  firstPattern = selectThree[0].id[2]
+  secondPattern = selectThree[1].id[2]
+  thirdPattern = selectThree[2].id[2]
+  
+  firstColor = selectThree[0].id[3]
+  secondColor = selectThree[1].id[3]
+  thirdColor = selectThree[2].id[3]
+  
+  cardChecker(firstNumber, secondNumber, thirdNumber)
 }
