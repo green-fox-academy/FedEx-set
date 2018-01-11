@@ -18,7 +18,7 @@ let firstColor = 'A';
 let secondColor = 'A';
 let thirdColor = 'A';
 
-export function cardChecker(){
+function cardChecker(){
     if (numberChecker(firstNumber,secondNumber,thirdNumber)){
         if (attributeChecker(firstShape, secondShape, thirdShape, 'shape')){
             if (attributeChecker(firstPattern, secondPattern, thirdPattern, 'pattern')){
