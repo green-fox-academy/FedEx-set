@@ -139,3 +139,9 @@ function setChecker(selectThree){
   
   cardChecker(firstNumber, secondNumber, thirdNumber)
 }
+
+
+function renderError(a) {
+  const userError = document.querySelector('.error-message');
+  userError.innerHTML = 'Wrong ' + a;
+}
