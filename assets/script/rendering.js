@@ -100,14 +100,6 @@ function cardChanger(){
     selectedCards[j].setAttribute('class', 'card')
     console.log(cards.length)
   }
-  let changedTable = document.getElementsByClassName('card')
-  console.log(changedTable)
-  // cardCode.forEach(function (code) {
-  //   let oneCard = document.getElementById(code)
-  //   oneCard.addEventListener('click', function(event){
-  //     clickAction(oneCard)
-  //   })
-  // });
 };
 
   function clickAction(card){
@@ -115,11 +107,15 @@ function cardChanger(){
     if (card.getAttribute('class') === 'card' && selectThree.length < 3){
       card.setAttribute('class', 'card selected')
       selectThree.push(card)
+      console.log(selectThree)
       if (selectThree.length === 3){
         setChecker(selectThree)
+        selectThree = []
+        console.log(selectThree)
       }
   } else if (card.getAttribute('class') === 'card selected') {
     card.setAttribute('class', 'card')
+    console.log(selectThree)
     selectThree.pop(card)
   }
 }
@@ -146,7 +142,5 @@ function setChecker(selectThree){
   secondColor = selectThree[1].id[3]
   thirdColor = selectThree[2].id[3]
   
-  if(cardChecker(firstNumber, secondNumber, thirdNumber)){
-    cardChanger();
-  }
+cardChecker(firstNumber, secondNumber, thirdNumber)
 }

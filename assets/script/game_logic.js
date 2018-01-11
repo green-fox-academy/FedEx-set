@@ -27,6 +27,7 @@ function cardChecker(){
                     if (setCounter === 4){
                         console.log('set');
                         setCounter = 0;
+                        cardChanger();
                         return true
                     } else {
                         setCounter = 0;
