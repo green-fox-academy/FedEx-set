@@ -95,9 +95,15 @@ function cardChanger(){
 
 
   function clickAction(card){
-    if (card.getAttribute('class') === 'card'){
+    
+    if (card.getAttribute('class') === 'card' && selectThree.length < 3){
       card.setAttribute('class', 'card selected')
-    } else {
-      card.setAttribute('class', 'card')
-    }
+    selectThree.push(card)
+  } else if (card.getAttribute('class') === 'card selected') {
+    card.setAttribute('class', 'card')
+    selectThree.pop(card)
+  }
+
 }
+
+let selectThree = [];
