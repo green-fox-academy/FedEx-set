@@ -27,6 +27,9 @@ function renderCards(cardCode) {
     oneCard.addEventListener('click', function(event){
       clickAction(oneCard)
     })
+    const newgame = document.querySelector('.new-game').addEventListener('click', function(event){
+      location.reload();
+    })
   });
 };
 
