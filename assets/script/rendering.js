@@ -114,5 +114,7 @@ function cardChanger(){
 let selectThree = [];
 
 function setChecker(selectThree){
-  console.log(selectThree)
+  selectThree.forEach(function (e){
+    console.log(e.id)  
+  })
 }
