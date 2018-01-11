@@ -18,22 +18,6 @@ let firstColor;
 let secondColor;
 let thirdColor;
 
-// let firstNumber = '1'; 
-// let secondNumber = '2';
-// let thirdNumber = '3';
-
-// let firstShape = 'A';
-// let secondShape = 'B';
-// let thirdShape = 'C';
-
-// let firstPattern = 'B';
-// let secondPattern = 'A';
-// let thirdPattern = 'C';
-
-// let firstColor = 'A';
-// let secondColor = 'A';
-// let thirdColor = 'A';
-
 function cardChecker(){
     if (numberChecker(firstNumber,secondNumber,thirdNumber)){
         if (attributeChecker(firstShape, secondShape, thirdShape, 'shape')){
@@ -72,9 +56,3 @@ function attributeChecker(x, y, z, attribute){
         return true
     }
 };
-
-function cardChanger(){
-    let selectedCards = document.querySelectorAll('.selected');
-}
-
-// cardChecker(firstNumber, secondNumber, thirdNumber);
