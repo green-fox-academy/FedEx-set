@@ -141,7 +141,9 @@ function setChecker(selectThree){
 }
 
 
-function renderError(a) {
-  const userError = document.querySelector('.error-message');
-  userError.innerHTML = 'Wrong ' + a;
+function renderError(attribute) {
+  const sidebar = document.querySelector('.sidebar');
+  const errorLine = document.createElement('p');
+  sidebar.appendChild(errorLine);
+  errorLine.innerHTML = 'Wrong ' + attribute;
 }
