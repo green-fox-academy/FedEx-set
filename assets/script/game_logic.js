@@ -61,4 +61,4 @@ function cardChanger(){
     let selectedCards = document.querySelectorAll('.selected');
 }
 
-cardChecker(firstNumber, secondNumber, thirdNumber);
+// cardChecker(firstNumber, secondNumber, thirdNumber);
