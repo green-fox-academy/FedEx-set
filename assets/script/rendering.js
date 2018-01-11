@@ -155,10 +155,11 @@ function cardChanger(){
 }
 
 
-function renderError(a) {
-  const userError = document.querySelector('.error-message');
-  if(cardChecker){
-    userError.innerHTML = "SET! U R $up€r @w€$0m€";
-  }
-  userError.innerHTML = 'Wrong ' + a;
+function renderError(attribute) {  
+  console.log("EZ AZ: " + attribute)
+  
+    errorLine.textContent += " " + attribute;
+  
+  
 }
+const errorLine = document.querySelector('.log');

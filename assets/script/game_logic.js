@@ -55,7 +55,10 @@ function attributeChecker(x, y, z, attribute){
         return true
     } else {
         console.log('Wrong ' + attribute)
-        renderError(attribute);
+        let errorMsg = [];
+        errorMsg.push( "Wrong " + attribute );
+        renderError(errorMsg);
         return true
     }
 };
+
