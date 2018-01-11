@@ -62,7 +62,7 @@ createCards(getCards)
 
 function getCards(cards){
   let table = [];
-  for (let i = 1; i <= 12; i++){
+  for (let i = 0; i < 12; i++){
     let cardOnTable = Math.floor(Math.random() * cards.length);
     table.push(cards[cardOnTable]);
     cards.splice(cardOnTable, 1);
